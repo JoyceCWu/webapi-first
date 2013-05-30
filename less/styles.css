@@ -8127,9 +8127,8 @@ a {
   padding-left: 10px !important;
 }
 .icon-plus-sign {
-  color: #464646;
   font-size: 30px;
-  margin-left: 10px;
+  padding-bottom: 10px;
 }
 /* search */
 .accordion-group {
@@ -8168,6 +8167,9 @@ a {
 }
 .iie {
   color: red;
+}
+.cercles {
+  text-align: right;
 }
 /* 
 * fonts.less
