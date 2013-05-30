@@ -15,64 +15,11 @@
         <link rel="stylesheet" href="less/styles.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <script type="text/javascript">
-$(function() {
-    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=new-intraday.json&callback=?', function(data) {
+      <script type="text/javascript">
 
-        // create the chart
-        $('#container-stock').highcharts('StockChart', {
-            
-
-            title: {
-                text: 'AAPL stock price by minute'
-            },
-            
-            xAxis: {
-                gapGridLineWidth: 0
-            },
-            
-            rangeSelector : {
-                buttons : [{
-                    type : 'hour',
-                    count : 1,
-                    text : '1h'
-                }, {
-                    type : 'day',
-                    count : 1,
-                    text : '1D'
-                }, {
-                    type : 'all',
-                    count : 1,
-                    text : 'All'
-                }],
-                selected : 1,
-                inputEnabled : false
-            },
-            
-            series : [{
-                name : 'AAPL',
-                type: 'area',
-                data : data,
-                gapSize: 5,
-                tooltip: {
-                    valueDecimals: 2
-                },
-                fillColor : {
-                    linearGradient : {
-                        x1: 0, 
-                        y1: 0, 
-                        x2: 0, 
-                        y2: 1
-                    },
-                    stops : [[0, Highcharts.getOptions().colors[0]], [1, 'rgba(0,0,0,0)']]
-                },
-                threshold: null
-            }]
-        });
-    });
-});
 
         </script>
+
     </head>
     <body class="dash">
         <!--[if lt IE 7]>
@@ -104,43 +51,136 @@ $(function() {
 
             <div class="row board">
                 <div class="span10 offset1">
-                    <div id="container-stock" style="height: 500px; min-width: 500px"></div>
+<!--        
+                      <form action="#"> 
+        <input placeholder="Search…" type="search" name="q" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off"> 
+    </form>
 
-                    <div class="accordion" id="accordion2">
+                    <div class="accordion" id="accordion2" data-bind="template: {name:'beer', foreach:beers}">
 
-
-
+<script type="text/html" id="beer">
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#" data-bind="{click: collapse}">
 
-                                  <div class="row">
 
                                     <div class="span3">
-                                        <h1>A</h1>
-                                        <h2>Agilent Technologies</h2>
+                                        <h1 data-bind="text: displaySymbol"></h1>
+                                        <h2 data-bind="text: displayDescription"></h2>
                                     </div>
                                     <div class="span2">
-                                        <h3>35.64</h3>
+                                        <h3 data-bind="text: displaySymbol"></h3>
                                     </div>
                                     <div class="span2">
                                         <h3><i class="icon-arrow-up hai"></i></h3>
                                     </div>
                                     <div class="span2">
-                                        <h3>Mackle</h3>
+                                        <h3 data-bind="text: displaySymbol"></h3>
                                     </div>
+
+                                <div class="row">
+
+                                    <div class="span3">
+                                        <h1 data-bind="text: Symbol"></h1>
+                                        <h2 data-bind="text: Description"></h2>
+                                    </div>
+                                    <div class="span2">
+                                        <h3 data-bind="text: LastPriceDisplay"></h3>
+                                    </div>
+                                    <div class="span2">
+                                        <h3><i class="icon-arrow-up hai"></i></h3>
+                                    </div>
+                                    <div class="span2">
+                                        <h3 data-bind="text: Exchange"></h3>
+                                    </div>
+                                
+
+                                </div>
+
+                                
+                                </a>
+                            </div> -->
+
+
+
+<!-- all that stuff up there I don't understand so here are some things -->
+
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                  <h1>A</h1>
+                                  <h2>Agilent Technologies</h2>
+                                </a>
+                            </div>                            
+                            <div id="collapseOne" class="accordion-body collapse">
+                                <div class="accordion-inner">
+                                  Considered the best bellydancer in the history of bellydancing, Shakira is the bomb. All the brownie points.
+
+                                    <div id="container-stock" style="height: 500px; min-width: 500px"></div>
+
+                                  <div class="cercles">
+                                    <a href=""><i class="icon-plus-sign"></i></a>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+</script> 
+
+
+
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+
+
+                                    <h1>Yow</h1>
+                                    <h2>JavaScript Technologies</h2>
+                                </a>
+                            </div>
+
+                                 
+<!--
+                                    <div class="span3">
+                                        <h1 data-bind="text: displaySymbol"></h1>
+                                        <h2 data-bind="text: displayDescription"></h2>
+                                    </div>
+                                    <div class="span2">
+                                        <h3 data-bind="text: displaySymbol"></h3>
+                                    </div>
+                                    <div class="span2">
+                                        <h3><i class="icon-arrow-up hai"></i></h3>
+                                    </div>
+                                    <div class="span2">
+                                        <h3 data-bind="text: displaySymbol"></h3>
+                                    </div> -->
+
+
+<!-- what does this even do???
+                                    <div class="row">
+
+                                    <div class="span3">
+                                        <h1 data-bind="text: Symbol"></h1>
+                                        <h2 data-bind="text: Description"></h2>
+                                    </div>
+                                    <div class="span2">
+                                        <h3 data-bind="text: LastPriceDisplay"></h3>
+                                    </div>
+                                    <div class="span2">
+                                        <h3><i class="icon-arrow-up hai"></i></h3>
+                                    </div>
+                                    <div class="span2">
+                                        <h3 data-bind="text: Exchange"></h3>
+                                    </div>
+                                
 
                                   </div>
 
                                 
                                 </a>
-                            </div>
-                            <div id="collapseOne" class="accordion-body collapse">
+                            </div> -->
+                            <div id="collapseTwo" class="accordion-body collapse">
                                 <div class="accordion-inner">
-                                  Considered the best bellydancer in the history of bellydancing, Shakira is the bomb. All the brownie points.
-                                  <div class="cercles">
-                                    <a href=""><i class="icon-plus-sign"></i></a>
-                                  </div>
+                                  This is just full of yowza I don't even know.
                                 </div>
                             </div>
                         </div>
@@ -148,12 +188,12 @@ $(function() {
 
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
                                   <h1>AAMBAX</h1>
                                   <h2>Advisor's Disp Tr 376, Build A</h2>
                                 </a>
                             </div>
-                            <div id="collapseTwo" class="accordion-body collapse">
+                            <div id="collapseThree" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                   Unknown to this poster, but for performing a song with Shakira, Kid Cudi receives mega brownie points.
                                 </div>
@@ -163,12 +203,12 @@ $(function() {
 
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
                                   <h1>AAMVAX</h1>
                                   <h2>Advisors Dis Tr 329 Dividend A</h2>
                                 </a>
                             </div>
-                            <div id="collapseThree" class="accordion-body collapse">
+                            <div id="collapseFour" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                   Voted most handsome, Bboy Cloud receives style points for standing on his head in a bed.
                                 </div>
@@ -178,12 +218,12 @@ $(function() {
 
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
                                   <h1>AAN.A</h1>
                                   <h2>Aaron's Inc Cl A</h2>
                                 </a>
                             </div>
-                            <div id="collapseFour" class="accordion-body collapse">
+                            <div id="collapseFive" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                   The music is wonderfully emotional and frenetic, per usual for a Shakira bellydancing song.
                                 </div>
@@ -193,12 +233,12 @@ $(function() {
 
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">
                                   <h1>ACGLP</h1>
                                   <h2>Arch Capital Group Ltd 8% Sr A</h2>
                                 </a>
                             </div>
-                            <div id="collapseFive" class="accordion-body collapse">
+                            <div id="collapseSix" class="accordion-body collapse">
                                 <div class="accordion-inner">
                                   As for the bellydancing itself, this poster believes Shakira to have no equal.
                                 </div>
@@ -237,6 +277,7 @@ $(function() {
         <script src="js/vendor/bootstrap-affix.js"></script>
         <script src="js/vendor/highstock/highstock.js"></script>
         <script src="js/vendor/highstock/modules/exporting.js"></script>
+        <script src="js/vendor/knockout-2.2.1.js"></script>
 
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
@@ -248,5 +289,6 @@ $(function() {
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+
     </body>
 </html>
