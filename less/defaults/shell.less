@@ -1,0 +1,318 @@
+/* 
+* shell.less
+* 
+*/
+
+
+body {
+	background-image: url('../img/bg.jpg');
+	background-color: #1d1d1d;
+	margin-top: 175px;
+}
+
+body.dash {
+	margin-top: 20px;
+}
+
+.show-grid [class*="span"]:hover {
+	background-color: #ddd;
+}
+
+.show-grid [class*="span"] {
+	background-color: #eee;
+	text-align: center;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	min-height: 40px;
+	line-height: 40px;
+}
+
+.show-grid {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.title {
+/*	background-image: url('../img/logo.png');
+	background-repeat: no-repeat; */
+	margin-bottom: 75px;
+}
+
+.header {
+/*	background-image: url('../img/login.png'); 
+	background-repeat: no-repeat; */
+	margin-left: 55px;
+	margin-bottom: 20px;
+}
+
+.login {
+	padding-left: 55px;
+}
+
+.submit {
+	text-align: right;
+	padding-right: 100px;
+}
+
+.forgot {
+	width: 230px;
+	padding-top: 30px;
+	padding-bottom: 80px;
+	padding-left: 100px;
+}
+
+/* only for footer lol */
+/* CHANGE TO DES COLORES */
+p {
+	color: #fff;
+	font-size: 16px;
+	line-height: 110%;
+}
+
+/* only for symbols */
+h1 {
+	color: #f4f5f5;
+	font-size: 24px;
+	line-height: 110%;
+}
+
+/* for small white text */
+/* SORRY NOW IT'S GREY COMPANY NAME */
+h2 {
+	color: #a2a7af;
+	font-size: 12px;
+	line-height: 110%;
+	font-weight: normal;
+}
+
+/* grey text */
+/* CHANGING TO NUMBERS HOLLA TEXT */
+h3 {
+	color: #f4f5f5;
+	font-size: 24px;
+	line-height: 110%;
+	font-weight: normal;
+}
+
+/* for dash page */
+h4 {
+	color: #464646;
+	font-size: 50px;
+	font-weight: normal;
+	line-height: 110%;
+	text-align: center;
+}
+
+/* HI THIS IS 'HOW IT WORKS' BIG GREY */
+h5 {
+	color: #a2a7af;
+	font-size: 35px;
+	font-weight: normal;
+	line-height: 110%;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.compliance {
+	padding-bottom: 10px;
+}
+
+/* copied from webclient */
+.button,
+#btnTrust,
+#btnNotTrust {
+    position: relative;
+    margin-top: 25px;
+    padding-left: 41px;
+    padding-right: 17px;
+    width: 140px;
+    min-width: 140px;
+    height: 35px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    border: 1px solid #0A7A0A;
+    border-top: 1px solid #72D472;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.75);
+    color: #efefef;
+/*    font-family: AramidMedium; */
+    font-size: 14px;
+    font-weight: normal;
+    -webkit-text-shadow: 0 1px 0 rgba(0, 0, 0, 0.75);
+    -moz-text-shadow: 0 1px 0 rgba(0, 0, 0, 0.75);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    background: url('../img/btnp.jpg') 0 0;
+}
+
+#btnTrust {
+    width: 190px;
+    margin-right:25px;
+}
+
+#btnNotTrust {
+    background: url('../img/btnn.jpg') 0 0;
+    width: 215px;
+    border: 1px solid #990000;
+    border-top: 1px solid #ff0000;
+}
+
+.button:hover,
+#btnTrust:hover {
+    border: 1px solid #148414;
+    border-top: 1px solid #7CDE7C;
+    background-position: 0 35px;
+}
+
+#btnNotTrust:hover {
+    border: 1px solid #990000;
+    border-top: 1px solid #ff0000;
+    background-position: 0 35px;
+}
+
+.input-login-top {
+	border-radius: 0 5px 0 0 !important;
+	height: 40px !important;
+	padding-left: 10px !important;
+	font-size: 18px !important;
+	line-height: 2 !important;
+	border-bottom: 0px !important;
+}
+
+.input-login-bottom {
+	border-radius: 0 0 5px 0 !important;
+	height: 40px !important;
+	padding-left: 10px !important;
+	font-size: 18px !important;
+	line-height: 2 !important;
+}
+
+.input-pre-top {
+/*	padding: 14px 14px !important; */
+	padding-top: 11px !important;
+	padding-bottom: 17px !important;
+	padding-left: 14px !important;
+	padding-right: 14px !important;
+	border-radius: 5px 0 0 0 !important;
+	border-bottom: 0px !important;
+}
+
+.input-pre-bot {
+	padding-top: 11px !important;
+	padding-bottom: 17px !important;
+	padding-left: 14px !important;
+	padding-right: 14px !important;
+	border-radius: 0 0 0 5px !important;
+}
+
+.login-icon-top {
+	font-size: 24px;
+	color: #bec1c2;
+}
+
+.login-icon-bot {
+	font-size: 24px;
+	margin: 0 2px;
+	color: #bec1c2;
+}
+
+.input-prepend {
+	margin-bottom: 0;
+}
+
+
+.hiw {
+	padding-left: 100px;
+}
+
+.hiwtext {
+	margin-left: 55px;
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+
+
+
+
+
+/* dash */
+.board {
+	margin-top: 50px;
+}
+
+.icon-bar-chart {
+	font-size: 350px;
+	color: #464646;
+}
+
+.search {
+	padding-left: 70px;
+}
+
+.input-search {
+	border-radius: 10px 0 0 10px !important;
+	border-right-color: transparent !important;
+	font-size: 15px !important;
+	height: 40px !important;
+	width: 175px !important;
+	padding-left: 10px !important;
+}
+
+.icon-plus-sign {
+	color: #464646;
+	font-size: 30px;
+	margin-left: 10px;
+}
+
+
+
+
+
+
+
+/* search */
+.accordion-group {
+	border: none;
+	background-color: #181818 !important;
+}
+
+.accordion-inner {
+	border-top: none;
+	color: #fff !important;
+}
+
+.seamaglass {
+/*	padding-top: 11px !important;
+	padding-bottom: 17px !important;
+	padding-left: 14px !important;
+	padding-right: 14px !important; */
+	border-radius: 0 10px 10px 0 !important;
+	border-color: #fff !important;
+	background-color: #fff !important;
+	padding-left: 5px !important;
+	padding-top: 14px !important;
+	padding-right: 10px !important;
+	padding-bottom: 14px !important;
+}
+
+.maglass {
+	color: #cdd0d1;
+	font-size: 20px;
+}
+
+.simplebox {
+	border-color: #fff !important;
+	box-shadow: none !important;
+	outline: none;
+}
+
+.hai {
+	color: green;
+}
+
+.iie {
+	color: red;
+}
