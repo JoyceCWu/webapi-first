@@ -1,7 +1,12 @@
 // Testing JSon Data 
 
 $(function() {
+    var extractToken = function(hash) {
+            var match = hash.match(/access_token=(\w+)/);
+            return !!match && match[1];
+    };
 	var beers = [];
+    var token = extractToken(document.location.hash);
 	var viewModel = {
 		query: ko.observable('')
 	};
@@ -9,7 +14,7 @@ $(function() {
 	viewModel.beers = ko.dependentObservable(function() {
 		var search = this.query().toLowerCase();
 		// search from the WebAPI
-		$.get('https://qa.api.tradestation.com/v2/data/symbols/suggest/' + search + '?oauth_token=Q0FnZFdqRUFNZVB2bGRWaUR4bjF4ZUNOOE5OOU9XSElJdjJMUmpHd1lvQkZFODg3MVVCUTMrSHo3eC8zZk4vRElXSE82aDZ4RS9tL1E5VGplbVRpdDJJYXJOd2twWlJmNzZSRUZyTEFsSkxkUU5hWFc4NEdZc3M5eE5WMU4rT2tzQ1BFV3c1OUlNb1E0VSszQnNxVFJJcUlHQXJTTnExRHNKdmNuOERxRGMwem1ySHQzdEdpN2NnNkY3K3oxY1phWkkzUCtlbUdMWHV6dmwyaXZoOVdMeUVPK2hMcXlOWlc1TkE3eHp1M0h0MVNnT0RZZ2NaV1F0ZGh2NnNXdTR5RVZUUmlEdkI4M0NPOGlvNzFNZVFPMWJWWDVZbHlDbjVnMHlONVhMT2gwZ3JMdFY5UGVkWkJtMnB0ZldDeWs4d1cvUkgxMFJJWXhjZWxmUUc3WVFMNnVybm1velI3VWFMOWhWVml4ZWdBV2pVPQ%3d%3d', function(data) {
+		$.get('https://qa.api.tradestation.com/v2/data/symbols/suggest/' + search + '?$top=20&oauth_token=' + token, function(data) {
 				beers = data;
 		}, "json");
 
@@ -95,4 +100,21 @@ $(function() {
             }]
         });
     });
+});
+
+
+// $('#demoing').click(function () {
+//     console.log("boo");
+//  $('demo').remove();
+// });
+
+$("#appendedInput").click(function () {
+    console.log("as;ldfk");
+ //   $("#remove").addClass("fadeOut");
+    $(".demo").remove();
+});
+
+$("#plusle").click(function () {
+    console.log("booooo");
+    $(".accordion").remove();
 });
