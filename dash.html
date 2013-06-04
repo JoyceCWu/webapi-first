@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="less/styles.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
     </head>
     <body class="dash">
         <!--[if lt IE 7]>
@@ -31,19 +32,12 @@
                         <img class="animated fadeInDown" src="img/logo.png">
                     </div>
                 </div>
-                <div class="span2 offset1" align="right">
-                    <a href=""><h2>DASH <i class="icon-bar-chart menu"></i></h2></a>
-                    <a href=""><h2>LOGOUT <i class="icon-signout"></i></h2></a>
-                </div>
-
             </div>
 
             <div class="row">
                 <div class="span4 offset4 animated fadeInUp">
                     <div class="search">
-                        <div class="input-append">
-
-<!-- I did a thing here -->                            
+                        <div class="input-append">            
                             <form action="#"> 
                                 <input class="input-search simplebox" id="appendedInput" placeholder="SEARCH SYMBOL" type="search" name="q" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off"> 
                                 <span class="add-on seamaglass"><i class="icon-search maglass"></i></span>
@@ -58,38 +52,23 @@
 
                     <div class="accordion" id="accordion2" data-bind="template: {name:'beer', foreach:beers}">
 
-<script type="text/html" id="beer"> 
-                        <div class="accordion-group">
-                            <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-
-                                    <div class="row">
-
-                                    <div class="span3">
-                                        <h1 data-bind="text: Name"></h1>
-                                        <h2 data-bind="text: Description"></h2>
-                                    </div>
-
-                                  </div>
-
-                                
-                                </a>
-                            </div>
-                            <div id="collapseOne" class="accordion-body collapse">
-                                <div class="accordion-inner">
-
-                                    <div id="container-stock" style="height: 500px; min-width: 500px"></div>
-
-                                  <div class="cercles">
-                                    <a href=""><i id="plusle" class="icon-plus-sign"></i></a>
-                                  </div>
+                        <script type="text/html" id="beer"> 
+                            <div class="accordion-group">
+                                <div class="accordion-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                        <div class="row">
+                                            <div class="span3">
+                                                <h1 data-bind="text: Name"></h1>
+                                                <h2 data-bind="text: Description"></h2>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
-                        </div>
-</script>
+                        </script>
+
                     </div>
                 </div>
-<!-- ....it ends hereeeeeeeeeee -->
 
                 <div class="span4 offset4 demo animated">
                     <i class="icon-bar-chart"></i>
@@ -97,19 +76,6 @@
                 <div class="span8 offset2 demo animated">
                     <h4>Your dashboard is empty.<br>Please type in a symbol above to start filling your dash.</h4>
                 </div>
-
-<!-- <div id="remove" class="animated">
-                <div class="span4 offset4">
-                    <i class="icon-bar-chart"></i>
-                </div>
-                <div class="span8 offset2">
-                    <h4>Your dashboard is empty.<br>Please type in a symbol above to start filling your dash.</h4>
-                </div>
-            </div> -->
-
-
-
-
             </div>
         </div>
 
@@ -122,7 +88,6 @@
         <!-- Le javascript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <!-- moved jquery to top -->
         <script src="js/jquery.js"></script>
         <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         <script src="js/vendor/bootstrap-transition.js"></script>
@@ -139,9 +104,6 @@
         <script src="js/vendor/bootstrap-typeahead.js"></script>
         <script src="js/vendor/bootstrap-affix.js"></script>
 
-<!-- also added these thingys -->
-        <script src="js/vendor/highstock/highstock.js"></script>
-        <script src="js/vendor/highstock/modules/exporting.js"></script>
         <script src="js/vendor/knockout-2.2.1.js"></script>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

@@ -7909,7 +7909,7 @@ a.badge:focus {
 body {
   background-image: url('../img/bg.jpg');
   background-color: #1d1d1d;
-  margin-top: 175px;
+  margin-top: 100px;
 }
 body.dash {
   margin-top: 20px;
@@ -7974,7 +7974,7 @@ h1 {
 h2 {
   color: #a2a7af;
   font-size: 12px;
-  line-height: 110%;
+  line-height: 120%;
   font-weight: normal;
 }
 /* grey text */
@@ -7999,6 +7999,13 @@ h5 {
   font-size: 35px;
   font-weight: normal;
   line-height: 110%;
+}
+h6 {
+  color: #a2a7af;
+  font-size: 14px;
+  line-height: 110%;
+  font-weight: normal;
+  text-decoration: underline;
 }
 a {
   text-decoration: none !important;
@@ -8105,6 +8112,11 @@ a {
 .hiwtext {
   margin-left: 55px;
   margin-top: 100px;
+  margin-bottom: 20px;
+}
+.hiwtext2 {
+  margin-left: 150px;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 /* dash */
