@@ -26,6 +26,7 @@
  
 
         <div class="container">
+            <!-- TradeStation logo -->
             <div class="row">
                 <div class="span2 offset5">
                     <div class="title">
@@ -34,6 +35,7 @@
                 </div>
             </div>
 
+            <!-- SEARCH SYMBOL textfield -->
             <div class="row">
                 <div class="span4 offset4 animated fadeInUp">
                     <div class="search">
@@ -48,31 +50,76 @@
             </div>
 
             <div class="row board">
+                <!-- Symbol Suggest name/description data -->
+                <!-- Black background when input found -->
                 <div class="span10 offset1">
 
-                    <div class="accordion" id="accordion2" data-bind="template: {name:'beer', foreach:beers}">
-
-                        <script type="text/html" id="beer"> 
-                            <div class="accordion-group">
-                                <div class="accordion-heading">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                                        <div class="row">
-                                            <div class="span3">
-                                                <h1 data-bind="text: Name"></h1>
-                                                <h2 data-bind="text: Description"></h2>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </script>
-
+                    <div class="accordion" id="accordion2" data-bind="template: {foreach:beers}">
+                      <div class="accordion-group">
+                        <div class="accordion-heading">
+                          <a data-bind="attr: { href: '#' + id }" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th data-bind="text: Name"></th>
+                                        <th>35.53</th>
+                                        <th>+ 12.75(13.62%)</th>
+                                        <th>NYSE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-bind="text: Description"</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                          </a>
+                        </div>
+                        <div data-bind="attr: { id: id }" class="accordion-body collapse in">
+                          <div class="accordion-inner">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>52W high: </td> 
+                                        <td>38.63</td>
+                                        <td>Div:</td>  
+                                        <td>1.02</td>     
+                                        <td>P/E:</td>
+                                        <td>26.5</td> 
+                                        <td>High:</td>
+                                        <td>27.15</td>
+                                        <td>Close:</td>
+                                        <td>26.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>52W Low:</td>
+                                        <td>18.81</td>
+                                        <td>%: </td>
+                                        <td>2.1</td>
+                                        <td>Vol 00s:</td>
+                                        <td>6517</td>
+                                        <td>Low:</td>
+                                        <td>2650</td>
+                                        <td>Net Chg:</td>
+                                        <td>+0.14</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <img src="http://placehold.it/350x150" />
+                          </div>
+                        </div>
+                      </div>
+                    
                     </div>
+
                 </div>
 
+                <!-- Background Picture when no input -->
                 <div class="span4 offset4 demo animated">
                     <i class="icon-bar-chart"></i>
                 </div>
+
+                <!-- Background Words when no input -->
                 <div class="span8 offset2 demo animated">
                     <h4>Your dashboard is empty.<br>Please type in a symbol above to start filling your dash.</h4>
                 </div>
