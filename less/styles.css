@@ -11,6 +11,64 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
+.dataName {
+  color: #009900;
+}
+.dataValue {
+  width: 150px;
+}
+#symbolName {
+  width: 300px;
+  text-align: left;
+  color:white;
+}
+.symbolMain {
+  width: 300px;
+  text-align: right;
+}
+#addIcon {
+  text-align: right;
+}
+.favNames {
+  color: white;
+  text-align: left;
+  height: 100px;
+  position:relative; 
+  top:20px;
+}
+#chart {
+  position:relative; 
+  top:20px;
+}
+path {
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+ 
+line {
+    stroke: white;
+}
+ 
+text {
+    font-family: Verdana;
+    font-size: 10pt;
+    stroke: white;
+}
+.saveToFavorites {
+  color:white;
+  background: green;
+  border-radius: 100px;
+}
+.removeFromFavorites {
+  color:white;
+  background: green;
+  border-radius: 100px;
+}
+#favoriteSymbolsList {
+  color:white;
+}
+
 .clearfix {
   *zoom: 1;
 }

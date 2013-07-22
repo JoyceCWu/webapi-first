@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="less/styles.css">
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
     </head>
     <body class="dash">
@@ -41,13 +42,72 @@
                     <div class="search">
                         <div class="input-append">            
                             <form action="#"> 
-                                <input class="input-search simplebox" id="appendedInput" placeholder="SEARCH SYMBOL" type="search" name="q" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off"> 
+                                <input class="input-search simplebox" id="appendedInput" placeholder="SEARCH SYMBOL" type="search" name="q" data-bind="valueUpdate: 'keyup', value: query" autocomplete="off"> 
                                 <span class="add-on seamaglass"><i class="icon-search maglass"></i></span>
                             </form> 
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            <div class="row">
+                <div class="span10 offset1">
+                    <div class="accordion" id="accordion2" data-bind="template: {foreach:favoriteSymbols}">
+                    
+                        <!-- <li class="favNames">Symbol</li> -->
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                              <p id="symbolName" data-bind="text:symb"></p>
+                                <!-- <p>Symbol</p> -->
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- <p id="favoriteSymbolList">Welcome!</p>
+            <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+            <div id="result"></div> -->
+
+
+
+           <!-- <div class="row board">
+                <div class="span10 offset1">
+                    <div class="accordion demo animated" id="accordion2" data-bind="template: {foreach:favoriteSymbols}">
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th id="symbolName">Name</th>
+                                        <th class="symbolMain">NetChangePct</th>
+                                        <th class="symbolMain">Exchange</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Description</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                          </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+
+
+
+
+
 
             <div class="row board">
                 <!-- Symbol Suggest name/description data -->
@@ -61,51 +121,67 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th data-bind="text: Name"></th>
-                                        <th>35.53</th>
-                                        <th>+ 12.75(13.62%)</th>
-                                        <th>NYSE</th>
+                                        <th id="symbolName" data-bind="text: Name"></th>
+                                        <!-- <th>35.53</th>
+                                        <th>+ 12.75(13.62%)</th> -->
+
+                                        <th class="symbolMain" data-bind="text: NetChangePct"></th>
+                                        <!-- <th id="netChangeUp" data-bind="text: NetChangePct" visible="netChangeInc"></th>
+                                        <th id="netChangeDown" data-bind="text: NetChangePct" visible="netChangeDec"></th>
+                                        <th>%</th> -->
+                                        <th class="symbolMain" data-bind="text: Exchange"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td data-bind="text: Description"</td>
+                                        <td data-bind="text: Description"></td>
                                     </tr>
                                 </tbody>
                             </table>
                           </a>
                         </div>
-                        <div data-bind="attr: { id: id }" class="accordion-body collapse in">
+                        <div data-bind="attr: { id: id }" class="accordion-body collapse">
                           <div class="accordion-inner">
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td>52W high: </td> 
-                                        <td>38.63</td>
-                                        <td>Div:</td>  
-                                        <td>1.02</td>     
-                                        <td>P/E:</td>
-                                        <td>26.5</td> 
-                                        <td>High:</td>
-                                        <td>27.15</td>
-                                        <td>Close:</td>
-                                        <td>26.50</td>
+                                        <td class="dataName">AskPriceDisplay: </td>
+                                        <td class="dataValue" data-bind="text:AskPriceDisplay"></td>
+                                        <td class="dataName">HighPriceDisplay: </td>
+                                        <td class="dataValue" data-bind="text:HighPriceDisplay"></td>
+                                        <td class="dataName">High52WeekPriceDisplay: </td>
+                                        <td class="dataValue" data-bind="text:High52WeekPriceDisplay"></td>
+                                        <td class="dataName">LastPriceDisplay: </td>
+                                        <td class="dataValue" data-bind="text:LastPriceDisplay"></td>
+                                        <td class="data-bindName">NetChangePct: </td>
+                                        <td class="dataValue" data-bind="text:NetChangePct"></td>
                                     </tr>
                                     <tr>
-                                        <td>52W Low:</td>
-                                        <td>18.81</td>
-                                        <td>%: </td>
-                                        <td>2.1</td>
-                                        <td>Vol 00s:</td>
-                                        <td>6517</td>
-                                        <td>Low:</td>
-                                        <td>2650</td>
-                                        <td>Net Chg:</td>
-                                        <td>+0.14</td>
+                                        <td class="dataName">BidPriceDisplay: </td>
+                                        <td class="dataValue" data-bind="text:BidPriceDisplay"></td>
+                                        <td class="dataName">LowPriceDisplay: </td>
+                                        <td class="dataValue" data-bind="text:LowPriceDisplay"></td>
+                                        <td class="dataName">Low52WeekPriceDisplay: </td>
+                                        <td class="dataValue" data-bind="text:Low52WeekPriceDisplay"></td>
+                                        <td class="dataName">ClosePriceDisplay: </td>
+                                        <td class="dataValue" data-bind="text:ClosePriceDisplay"></td>
+                                        <td class="dataName">Volume: </td>
+                                        <td class="dataValue" data-bind="text:Volume"></td>
+                                    </tr>
+                                    <tr>
+                                        <td id="chart">
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <img src="http://placehold.it/350x150" />
+                                                        
+
+                            <p id="addIcon">
+                            <button class="saveToFavorites" type="button" data-bind="value: Name">Save to Dashboard</button>
+                            <button class="removeFromFavorites" type="button" data-bind="value: Name">Remove from Dashboard</button>
+                            </p>
+
+                            
                           </div>
                         </div>
                       </div>
@@ -114,10 +190,18 @@
 
                 </div>
 
+                
+
                 <!-- Background Picture when no input -->
                 <div class="span4 offset4 demo animated">
                     <i class="icon-bar-chart"></i>
                 </div>
+
+                <!-- <div>
+                    <ul class="favNames" data-bind="foreach:favArray">
+                        <p data-bind="text:$data"></p>
+                    </ul>
+                </div> -->
 
                 <!-- Background Words when no input -->
                 <div class="span8 offset2 demo animated">
@@ -154,9 +238,103 @@
         <script src="js/vendor/knockout-2.2.1.js"></script>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <script src="jquery.storage.js"></script>
+
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/javascript">
+            
+        </script>
+
+        // <script type="text/javascript">
+        //     $(document).ready(function () {
+        //         var showChart = false;
+        //         $(document).on('click', '.accordion-heading', function() {
+        //             alert("click");
+        //             showChart = true;
+
+        //         });
+        //         showChart = false;
+        //     });
+        // </script>
+
+        <script>
+            
+        </script>
+
+        <script type="text/javascript">
+            var data = [3,5,7,4,3,4,9,2,9,3,4,6,5],
+            w = 400,
+            h = 200,
+            margin = 20,
+            y = d3.scale.linear().domain([0, d3.max(data)]).range([0 + margin, h - margin]),
+            x = d3.scale.linear().domain([0, data.length]).range([0 + margin, w - margin])
+
+            var vis = d3.select("#chart")
+                .append("svg:svg")
+                .attr("width", w)
+                .attr("height", h);
+             
+            var g = vis.append("svg:g")
+                .attr("transform", "translate(0, 200)");
+
+            var line = d3.svg.line()
+                .x(function(d,i) { return x(i); })
+                .y(function(d) { return -1 * y(d); });
+
+            g.append("svg:path").attr("d", line(data));
+
+            g.append("svg:line")
+                .attr("x1", x(0))
+                .attr("y1", -1 * y(0))
+                .attr("x2", x(w))
+                .attr("y2", -1 * y(0));
+             
+            g.append("svg:line")
+                .attr("x1", x(0))
+                .attr("y1", -1 * y(0))
+                .attr("x2", x(0))
+                .attr("y2", -1 * y(d3.max(data)));
+
+            g.selectAll(".xLabel")
+                .data(x.ticks(5))
+                .enter().append("svg:text")
+                .attr("class", "xLabel")
+                .text(String)
+                .attr("x", function(d) { return x(d) })
+                .attr("y", 0)
+                .attr("text-anchor", "middle");
+             
+            g.selectAll(".yLabel")
+                .data(y.ticks(4))
+                .enter().append("svg:text")
+                .attr("class", "yLabel")
+                .text(String)
+                .attr("x", 0)
+                .attr("y", function(d) { return -1 * y(d) })
+                .attr("text-anchor", "right")
+                .attr("dy", 4);
+
+            g.selectAll(".xTicks")
+                .data(x.ticks(5))
+                .enter().append("svg:line")
+                .attr("class", "xTicks")
+                .attr("x1", function(d) { return x(d); })
+                .attr("y1", -1 * y(0))
+                .attr("x2", function(d) { return x(d); })
+                .attr("y2", -1 * y(-0.3));
+             
+            g.selectAll(".yTicks")
+                .data(y.ticks(4))
+                .enter().append("svg:line")
+                .attr("class", "yTicks")
+                .attr("y1", function(d) { return -1 * y(d); })
+                .attr("x1", x(-0.3))
+                .attr("y2", function(d) { return -1 * y(d); })
+                .attr("x2", x(0));
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
