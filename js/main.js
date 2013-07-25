@@ -91,13 +91,19 @@ $("#plusle").click(function () {
     $(".accordion").remove();
 });
 
-var favoriteSymbols = JSON.parse(localStorage.getItem("favoriteSymbols"));
+if(favoriteSymbols == null) {
+	var favoriteSymbols = [];
+	console.log("favoriteSymbols == null");
+}
+if(favoriteSymbols != null) {
+	var favoriteSymbols = JSON.parse(localStorage.getItem("favoriteSymbols"));
+	console.log("saved to local storage!");
+}
+
 
 $(function() {
     $(document).on('click', '.saveToFavorites', function(){ 
         
-        //console.log("Success!");
-
         var symbolToAdd = $(this).attr('value');
         var validToAdd = true;
         // var favoriteSymbols = JSON.parse(localStorage.getItem("favoriteSymbols"));
