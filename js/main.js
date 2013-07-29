@@ -91,11 +91,13 @@ $("#plusle").click(function () {
     $(".accordion").remove();
 });
 
-if(favoriteSymbols == null) {
+
+if(localStorage.getItem("favoriteSymbols") == null) {
 	var favoriteSymbols = [];
 	console.log("favoriteSymbols == null");
 }
-if(favoriteSymbols != null) {
+else if(localStorage.getItem("favoriteSymbols") != null) {
+
 	var favoriteSymbols = JSON.parse(localStorage.getItem("favoriteSymbols"));
 	console.log("saved to local storage!");
 }
@@ -106,14 +108,18 @@ $(function() {
         
         var symbolToAdd = $(this).attr('value');
         var validToAdd = true;
-        // var favoriteSymbols = JSON.parse(localStorage.getItem("favoriteSymbols"));
+        
+        favoriteSymbols = JSON.parse(localStorage.getItem("favoriteSymbols"));
+
         if(favoriteSymbols == null)
         	favoriteSymbols = [];
 
-        for(var i = 0; i < favoriteSymbols.length; i++) {
-        	if(favoriteSymbols[i].symb == symbolToAdd) {
-        		validToAdd = false;
-        	}
+        if(favoriteSymbols != null) {
+        	for(var i = 0; i < favoriteSymbols.length; i++) {
+                if(favoriteSymbols[i].symb == symbolToAdd) {
+                	validToAdd = false;
+                }
+            }
         }
 
         if(validToAdd == true) {
@@ -124,8 +130,6 @@ $(function() {
 
         console.log(favoriteSymbols);
 
-        //return favoriteSymbols;\
-
         return favoriteSymbols;
 
     });	
@@ -134,12 +138,9 @@ $(function() {
 
 $(function() {
 	$(document).on('click','.removeFromFavorites', function() {
-		
+
 		var symbolToRemove = $(this).attr('value');
-		// alert(symbolToRemove);
-
-		// var favoriteSymbols = JSON.parse(localStorage.getItem("favoriteSymbols"));
-
+		
 		for(var i= 0; i < favoriteSymbols.length; i++) {
 			// console.log(favoriteSymbols[i]);
 			if(favoriteSymbols[i].symb == symbolToRemove) {
@@ -152,7 +153,7 @@ $(function() {
 		console.log(favoriteSymbols);
 
 		
-		// localStorage.clear();
+		//localStorage.clear();
 		
 		return favoriteSymbols;
 
